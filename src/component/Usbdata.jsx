@@ -4,7 +4,7 @@ function Usbdata() {
     const[usbData,setUsbData]=useState(null);
 
     async function getUsbData() {
-        let response=await fetch('http://10.0.157.103:5000/usbdevices')
+        let response=await fetch('http://10.0.154.138:5000/usbdevices')
         let data=await response.json();
         setUsbData(data)
         console.log( data[0].split('--')[1]);
@@ -13,7 +13,7 @@ function Usbdata() {
 
     useEffect(()=>{getUsbData()},[])
   return (
-    <div className='mt-2'>{(usbData===null)?(""):(usbData.map((data,i)=>(<div className='bg-amber-200 p-3 mt-2 w-[60%] rounded-2xl'>{i+1}<span className='ml-4'>{data.split('--')[0]}</span></div>)))}</div>
+    <div className='mt-2'>{(usbData===null)?(""):(usbData.map((data,i)=>(<div className='bg-amber-200 p-3 mt-2 w-[60%] rounded-2xl shadow-black-500 shadow-xl'>{i+1}<span className='ml-4'>{data.split('--')[0]}</span></div>)))}</div>
   )
 }
 

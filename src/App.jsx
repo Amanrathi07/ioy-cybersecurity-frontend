@@ -9,6 +9,8 @@ import AddRule from './component/AddRule'
 
 function Home() {
   return (
+    <div className='w-screen'>
+
     <Routes>
       <Route path="/" element={<Sidebar/>}>
         <Route path="/" element={<Dashboard/>}/>
@@ -18,6 +20,7 @@ function Home() {
       </Route>
       <Route path='*' element={<Erroe404/>} />
     </Routes>
+    </div>
   )
 }
 
